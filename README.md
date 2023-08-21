@@ -17,4 +17,9 @@
 
 # React 프로젝트 Github Pages로 배포하기
 - [참고 URL](https://medium.com/hcleedev/web-react-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-github-pages%EB%A1%9C-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-f62e59a2e210)
-- [참고 URL](https://codingapple.com/unit/react-build-deploy-github-pages/) -> 실제로는 이걸로 했음
+- [참고 URL](https://codingapple.com/unit/react-build-deploy-github-pages/) -> 실제로는 이걸로 했음(build 폴더 파일들을 https://github.com/htw8181/htw8181.github.io.git에 배포)
+
+# 개발일지
+- 2023년 8월 22일 
+  1. npx create-react-app 폴더명 --template typescript 명령어로 개발 폴더 생성
+  2. 빌드 후 생성된 build 폴더 파일들을 GitHub(https://github.com/htw8181/htw8181.github.io.git)에 배포하여 브라우저에서 확인(https://htw8181.github.io/) 
