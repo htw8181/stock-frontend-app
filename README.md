@@ -10,3 +10,6 @@
 
 # TypeScript 설치
 - [참고 URL](https://forsaken.tistory.com/entry/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90-typescript-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0)
+
+# package-lock.json 파일을 gitignore 하지말고 반영하자
+- [참고 URL](https://hyunjun19.github.io/2018/03/23/package-lock-why-need/)
