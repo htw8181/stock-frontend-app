@@ -1,7 +1,7 @@
 # stock-frontend-app
 
 # 개발내용
-- 안드로이드 StockApp(https://github.com/htw8181/StockApp.git)의 웹뷰에 보여질 웹 프론트 화면을 개발
+- 안드로이드 StockApp(https://github.com/htw8181/StockApp.git)의 호가 탭(웹뷰)에 보여질 웹 프론트 화면을 개발
 - 그러나, 현재까지는 JavaScript,TypeScript 까지만 개발지식이 있으므로, 이것으로만 프론트 화면 개발을 해보고, 추후, 리액트로 재개발 예정
 
 # Git을 통해 처음 내려받으면
@@ -23,3 +23,5 @@
 - 2023년 8월 22일 
   1. npx create-react-app 폴더명 --template typescript 명령어로 개발 폴더 생성
   2. 빌드 후 생성된 build 폴더 파일들을 GitHub(https://github.com/htw8181/htw8181.github.io.git)에 배포하여 브라우저에서 확인(https://htw8181.github.io/) 
+- 2023년 9월 3일
+  1. UI 작업 중 - 호가 영역 6등분하여 위에서 2칸을 매도호가, 아래에서 2칸을 매수호가 영역으로 분할하여 배치함

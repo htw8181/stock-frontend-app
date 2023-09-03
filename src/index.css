@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ask-item {
+  border: 1px solid white;
+  height: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  text-align: right;
+  background-color: rgb(227, 235, 245);
+}
+
+.bid-item {
+  border: 1px solid white;
+  height: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  text-align: right;
+  background-color: rgb(251, 241, 239);
+}
+
+.hoga-item {
+  display: inline-block;
+  width: 60%;
+  text-align: end;
+}
+
+.change-rate-item {
+  display: inline-block;
+  width: 40%;
+  text-align: end;
+}
