@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust:none;
 }
 
 code {
@@ -17,8 +18,8 @@ code {
   height: fit-content;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-right: 10px;
-  font-size: 50%;
+  padding-right: 5px;
+  font-size: 10px;
   text-align: right;
   background-color: rgb(227, 235, 245);
 }
@@ -28,8 +29,8 @@ code {
   height: fit-content;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-right: 10px;
-  font-size: 50%;
+  padding-right: 5px;
+  font-size: 10px;
   text-align: right;
   background-color: rgb(251, 241, 239);
 }
