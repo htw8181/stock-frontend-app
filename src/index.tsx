@@ -31,7 +31,7 @@ function renderAskAmount(): void {
     const item = document.createElement("div");
     item.id = `ask-amount-item${index}`;
     item.classList.add("ask-item");
-    item.textContent = item.id;
+    item.textContent = `매도잔량${index}`;
     documentFragment.append(item);
   }
   const askAmountArea = document.getElementById("ask-amount-area");
@@ -47,12 +47,12 @@ function renderAskHoga(): void {
     const hogaItem = document.createElement("div");
     hogaItem.id = `ask-hoga${index}`;
     hogaItem.classList.add("hoga-item");
-    hogaItem.textContent = hogaItem.id;
+    hogaItem.textContent = `매도호가${index}`;
     item.append(hogaItem);
     const changeRateItem = document.createElement("div");
     changeRateItem.id = `ask-change-rate${index}`;
     changeRateItem.classList.add("change-rate-item");
-    changeRateItem.textContent = `changeRate${index}`;
+    changeRateItem.textContent = `변화율${index}`;
     item.append(changeRateItem);
     documentFragment.append(item);
   }
@@ -69,12 +69,12 @@ function renderBidHoga(): void {
     const hogaItem = document.createElement("div");
     hogaItem.id = `bid-hoga${index}`;
     hogaItem.classList.add("hoga-item");
-    hogaItem.textContent = hogaItem.id;
+    hogaItem.textContent = `매수호가${index}`
     item.append(hogaItem);
     const changeRateItem = document.createElement("div");
     changeRateItem.id = `bid-change-rate${index}`;
     changeRateItem.classList.add("change-rate-item");
-    changeRateItem.textContent = `changeRate${index}`;
+    changeRateItem.textContent = `변화율${index}`;
     item.append(changeRateItem);
     documentFragment.append(item);
   }
@@ -88,7 +88,7 @@ function renderBidAmount(): void {
     const item = document.createElement("div");
     item.id = `bid-amount-item${index}`;
     item.classList.add("bid-item");
-    item.textContent = item.id;
+    item.textContent = `매수잔량${index}`;
     documentFragment.append(item);
   }
   const askAmountArea = document.getElementById("bid-amount-area");
