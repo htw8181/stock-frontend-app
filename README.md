@@ -25,3 +25,6 @@
   2. 빌드 후 생성된 build 폴더 파일들을 GitHub(https://github.com/htw8181/htw8181.github.io.git)에 배포하여 브라우저에서 확인(https://htw8181.github.io/) 
 - 2023년 9월 3일
   1. UI 작업 중 - 호가 영역 6등분하여 위에서 2칸을 매도호가, 아래에서 2칸을 매수호가 영역으로 분할하여 배치함
+
+# 참고
+- 크롬 브라우져에서 모바일 화면크기로 웹화면 보기 [참고 URL](http://openlec.co.kr/%EC%9B%B9-%EB%AA%A8%EB%B0%94%EC%9D%BC%EB%A1%9C-%EB%B3%B4%EA%B8%B0-%ED%99%94%EB%A9%B4%ED%81%AC%EA%B8%B0-%EC%9E%90%EB%8F%99%EC%A1%B0%EC%A0%95-%EB%A9%94%ED%83%80%ED%83%9C%EA%B7%B8/)
