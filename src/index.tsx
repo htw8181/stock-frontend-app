@@ -19,6 +19,40 @@ window.addEventListener("DOMContentLoaded",function() {
   renderAskHoga();
   renderBidHoga();
   renderBidAmount();
+  const ws = new WebSocket("wss://api.upbit.com/websocket/v1");
+  ws.onopen = function(event) {
+    console.log("ws.onopen");
+    this.send('[{"ticket":"test"},{"type":"ticker","codes":["KRW-BTC"]},{"type":"orderbook","codes":["KRW-BTC"]}]');
+  }
+  ws.onclose = function(event) {
+    console.log("ws.onclose");
+  }
+  ws.onerror = function() {
+    console.log("ws.onerror");
+  }
+  ws.onmessage = function(event) {
+    const reader = new FileReader();
+    reader.readAsText(event.data);
+    reader.onload = function() {
+      const result = JSON.parse(reader.result as string);
+      console.log(result);
+      switch(result.type) {
+        case "ticker" :
+          const tickerData: Ticker = result;
+        break;
+
+        case "orderbook" :
+          const orderbookData: Orderbook = result;
+        break;
+      }
+    }
+  }
+  this.window.addEventListener("beforeunload",function() {
+    ws.close();
+    return "window close";
+  });
+  const buttonVal = this.document.querySelector("button");
+  buttonVal?.addEventListener("click",(e)=>ws.close());
 });
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

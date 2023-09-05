@@ -27,6 +27,14 @@
   1. UI 작업 중 - 호가 영역 6등분하여 위에서 2칸을 매도호가, 아래에서 2칸을 매수호가 영역으로 분할하여 배치함
 - 2023년 9월 4일
   1. 모바일에서 웹 페이지 폰트 사이즈 자동조절 막기(-webkit-text-size-adjust: none)
+- 2023년 9월 5일
+  1. 웹소켓으로 현재가와 호가 실시간 데이터 수신 로직 처리 중
+  [참고 URL](https://sir.kr/qa/396075)
 
 # 참고
 - 크롬 브라우져에서 모바일 화면크기로 웹화면 보기 [참고 URL](http://openlec.co.kr/%EC%9B%B9-%EB%AA%A8%EB%B0%94%EC%9D%BC%EB%A1%9C-%EB%B3%B4%EA%B8%B0-%ED%99%94%EB%A9%B4%ED%81%AC%EA%B8%B0-%EC%9E%90%EB%8F%99%EC%A1%B0%EC%A0%95-%EB%A9%94%ED%83%80%ED%83%9C%EA%B7%B8/)
+- JSON 데이터를 타입스크립트 interface 타입으로 변환해주기 
+console 로그 창에서 JSON 데이터 로그에 마우스 우클릭으로 copy object 후에 아래 site에서 붙여넣기 하면 자동 변환된다.
+[참고 URL](https://transform.tools/json-to-typescript)
+- npm 기반 프로젝트에서 d.ts파일을 만들면 바로 인식이 안되고, @types폴더를 만들고, 거기에 d.ts 파일을 위치시켜야 함.
+[참고 URL](https://kimchanjung.github.io/programming/2020/07/05/typescipt-import-js-module-error/)
