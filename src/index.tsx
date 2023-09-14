@@ -24,7 +24,10 @@ window.addEventListener("DOMContentLoaded",function() {
   renderBidAmount();
   renderTradeDataArea();
 
-  const marketCode = "KRW-BTC";
+  const marketCode = new URLSearchParams(this.location.search).get("marketCode"); //"KRW-BTC";
+  
+  if(marketCode === null || marketCode === undefined) return;
+  
   const asyncResult = (async function (code: string) {
     const result = await new Promise(resolve => {
       //체결내역 조회
@@ -347,15 +350,27 @@ function updateOrderbookData(data: Orderbook): void {
       const prevClosingPrice = tickerData.prev_closing_price;
       const askHoga = orderBookUnits[index-1].ask_price;
       const askChangeRate = (askHoga - prevClosingPrice) / prevClosingPrice * 100;
+      const askTextColor = askChangeRate === 0 ? "black" : (askChangeRate > 0 ? "red" : "blue");
       const askChangeRateSymbol = askChangeRate === 0 ? "" : (askChangeRate > 0 ? "+" : "-");
       const askChangeRateItem = document.getElementById(`ask-change-rate${index}`);
-      if(askChangeRateItem != null) askChangeRateItem.textContent = `${askChangeRateSymbol}${askChangeRate.toFixed(2)}%`;
+      if(askChangeRateItem != null) {
+        askChangeRateItem.textContent = `${askChangeRateSymbol}${askChangeRate.toFixed(2)}%`;
+        askChangeRateItem.style.color = askTextColor;
+      }
+      const askHogaItem = document.getElementById(`ask-hoga${index}`);
+      if(askHogaItem != null) askHogaItem.style.color = askTextColor;  
 
       const bidHoga = orderBookUnits[index-1].bid_price;
       const bidChangeRate = (bidHoga - prevClosingPrice) / prevClosingPrice * 100;
+      const bidTextColor = askChangeRate === 0 ? "black" : (askChangeRate > 0 ? "red" : "blue");
       const bidChangeRateSymbol = bidChangeRate === 0 ? "" : (bidChangeRate > 0 ? "+" : "-");
       const bidChangeRateItem = document.getElementById(`bid-change-rate${index}`);
-      if(bidChangeRateItem != null) bidChangeRateItem.textContent = `${bidChangeRateSymbol}${bidChangeRate.toFixed(2)}%`;
+      if(bidChangeRateItem != null) {
+        bidChangeRateItem.textContent = `${bidChangeRateSymbol}${bidChangeRate.toFixed(2)}%`;
+        bidChangeRateItem.style.color = bidTextColor;
+      }
+      const bidHogaItem = document.getElementById(`bid-hoga${index}`);
+      if(bidHogaItem != null) bidHogaItem.style.color = bidTextColor;
     }
   }
 }

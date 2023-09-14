@@ -34,6 +34,8 @@
   1. 체결 내역 조회를 위한 axios 적용
   2. index.d.ts파일에 서버 조회 후 수신받은 체결 내역 data model 관련 인터페이스 타입 정의
   3. UI 작업 완료(추후, 필요한 부분 있으면 수정 예정)
+- 2023년 9월 15일
+  1. URL로 넘겨받은 marketCode로 호가 조회 하도록 적용(URLSearchParams 사용)
 
 # 참고
 - 크롬 브라우져에서 모바일 화면크기로 웹화면 보기 [참고 URL](http://openlec.co.kr/%EC%9B%B9-%EB%AA%A8%EB%B0%94%EC%9D%BC%EB%A1%9C-%EB%B3%B4%EA%B8%B0-%ED%99%94%EB%A9%B4%ED%81%AC%EA%B8%B0-%EC%9E%90%EB%8F%99%EC%A1%B0%EC%A0%95-%EB%A9%94%ED%83%80%ED%83%9C%EA%B7%B8/)
