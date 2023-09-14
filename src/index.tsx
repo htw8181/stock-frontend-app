@@ -215,14 +215,14 @@ function updateTickerData(data: Ticker|null): void {
     const currentTradePrice = data.trade_price;
 
     const tradeAmount = document.getElementById('trade-amount');
-    if(tradeAmount != null) tradeAmount.textContent = Number(data.acc_trade_volume_24h.toFixed(0)).toLocaleString('ko-KR');
+    if(tradeAmount != null) tradeAmount.textContent = `${Number(data.acc_trade_volume_24h.toFixed(0)).toLocaleString()} ${data.code.split('-')[1]}`;
 
     const tradePrice = document.getElementById('trade-price');
-    if(tradePrice != null) tradePrice.textContent = `${Number((data.acc_trade_price_24h * 0.000001).toFixed(0)).toLocaleString('ko-KR')}백만원`;
+    if(tradePrice != null) tradePrice.textContent = `${Number((data.acc_trade_price_24h * 0.000001).toFixed(0)).toLocaleString()}백만원`;
 
     const week52HighestPrice = document.getElementById('52week-highest-price');
     if(week52HighestPrice != null) {
-      week52HighestPrice.textContent = data.highest_52_week_price.toLocaleString('ko-KR');
+      week52HighestPrice.textContent = data.highest_52_week_price.toLocaleString();
       if(data.highest_52_week_price > currentTradePrice) {
         week52HighestPrice.style.color = 'red';
       } else if(data.highest_52_week_price < currentTradePrice) {
@@ -237,7 +237,7 @@ function updateTickerData(data: Ticker|null): void {
 
     const week52LowestPrice = document.getElementById('52week-lowest-price');
     if(week52LowestPrice != null) {
-      week52LowestPrice.textContent = data.lowest_52_week_price.toLocaleString('ko-KR');
+      week52LowestPrice.textContent = data.lowest_52_week_price.toLocaleString();
       if(data.lowest_52_week_price > currentTradePrice) {
         week52LowestPrice.style.color = 'red';
       } else if(data.lowest_52_week_price < currentTradePrice) {
@@ -251,11 +251,11 @@ function updateTickerData(data: Ticker|null): void {
     if(weekLowestPriceDate != null) weekLowestPriceDate.textContent = `(${data.lowest_52_week_date.replaceAll('-','.')})`;
 
     const prevClosingPrice = document.getElementById('prev-closing-price');
-    if(prevClosingPrice != null) prevClosingPrice.textContent = data.prev_closing_price.toLocaleString('ko-KR');
+    if(prevClosingPrice != null) prevClosingPrice.textContent = data.prev_closing_price.toLocaleString();
 
     const highPrice = document.getElementById('high-price');
     if(highPrice != null) {
-      highPrice.textContent = data.high_price.toLocaleString('ko-KR');
+      highPrice.textContent = data.high_price.toLocaleString();
       if(data.high_price > data.prev_closing_price) {
         highPrice.style.color = 'red';
       } else if(data.high_price < data.prev_closing_price) {
@@ -282,7 +282,7 @@ function updateTickerData(data: Ticker|null): void {
 
     const lowPrice = document.getElementById('low-price');
     if(lowPrice != null) {
-      lowPrice.textContent = data.low_price.toLocaleString('ko-KR');
+      lowPrice.textContent = data.low_price.toLocaleString();
       if(data.low_price > data.prev_closing_price) {
         lowPrice.style.color = 'red';
       } else if(data.low_price < data.prev_closing_price) {
@@ -328,13 +328,13 @@ function updateOrderbookData(data: Orderbook): void {
     if(askAmountBox != null) askAmountBox.style.width = `${askGraphWidth}%`;
 
     const askAmountItem = document.getElementById(`ask-amount-item${index}`);
-    if(askAmountItem != null) askAmountItem.textContent = `${askSize.toFixed(3)}`;
+    if(askAmountItem != null) askAmountItem.textContent = `${Number(askSize.toFixed(3)).toLocaleString()}`;
     
     const askHogaItem = document.getElementById(`ask-hoga${index}`);
-    if(askHogaItem != null) askHogaItem.textContent = `${orderBookUnits[index-1].ask_price.toLocaleString('ko-KR')}`;
+    if(askHogaItem != null) askHogaItem.textContent = `${orderBookUnits[index-1].ask_price.toLocaleString()}`;
     
     const bidHogaItem = document.getElementById(`bid-hoga${index}`);
-    if(bidHogaItem != null) bidHogaItem.textContent = `${orderBookUnits[index-1].bid_price.toLocaleString('ko-KR')}`;
+    if(bidHogaItem != null) bidHogaItem.textContent = `${orderBookUnits[index-1].bid_price.toLocaleString()}`;
    
     const bidSize = orderBookUnits[index-1].bid_size;
     let bidGraphWidth = (bidSize / totalBidSize * 30);
@@ -344,7 +344,7 @@ function updateOrderbookData(data: Orderbook): void {
     if(bidAmountBox != null) bidAmountBox.style.width = `${bidGraphWidth}%`;
 
     const bidAmountItem = document.getElementById(`bid-amount-item${index}`);
-    if(bidAmountItem != null) bidAmountItem.textContent = `${bidSize.toFixed(3)}`;
+    if(bidAmountItem != null) bidAmountItem.textContent = `${Number(bidSize.toFixed(3)).toLocaleString()}`;
 
     if(tickerData != null) {
       const prevClosingPrice = tickerData.prev_closing_price;
@@ -384,13 +384,13 @@ function updateTradeData(data: Trade): void {
   for(let index=20;index>0;index--) {    
     const tradePrice = document.getElementById(`trade-price${index}`);
     if(tradePrice != null) {
-      tradePrice.textContent = tradeDataArray[index-1].trade_price.toLocaleString('ko-KR');
+      tradePrice.textContent = tradeDataArray[index-1].trade_price.toLocaleString();
     }
 
     const tradeVolume = document.getElementById(`trade-volume${index}`);
     if(tradeVolume != null) {
       const textColor = tradeDataArray[index-1].ask_bid === 'ASK' ? 'blue' : 'red';
-      tradeVolume.textContent = tradeDataArray[index-1].trade_volume.toFixed(3);
+      tradeVolume.textContent = Number(tradeDataArray[index-1].trade_volume.toFixed(3)).toLocaleString();
       tradeVolume.style.color = textColor;
     }
   }
