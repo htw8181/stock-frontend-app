@@ -7,19 +7,128 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <button>websocket close</button>
-    <div id="root">
+    <button style="display: none;">websocket close</button>
+    <div id="root" style="text-align: center;">
       <div id="north-area" style="height: 50%;">
-        <div id="ask-amount-area" style="display: inline-block; width: 30%;"></div>
-        <div id="ask-hoga-area" style="display: inline-block; width: 37.5%;"></div>
-        <div id="description-area" style="display: inline-block; width: 30%;"></div>
+        <div id="ask-amount-area" style="display: inline-block; width: 32%;"></div>
+        <div id="ask-hoga-area" style="display: inline-block; width: 33%;"></div>
+        <div id="description-area" style="display: inline-block; width: 32%;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+                거래량
+              </td>
+              <td id="trade-amount" style="width: 50%; text-align: right;">                
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+                거래대금
+              </td>
+              <td id="trade-price" style="width: 50%; text-align: right;">
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50%; text-align: left;" />          
+              <td id="trade-price" style="width: 50%; text-align: right; ">
+                (최근 24시간)
+              </td>
+            </tr>  
+            <tr style="border-bottom: 1px solid rgb(238,238,238);">
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+                52주 최고
+              </td>          
+              <td id="52week-highest-price" style="width: 50%; text-align: right; ">
+              </td>
+            </tr>  
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+               
+              </td>          
+              <td id="52week-highest-price-date" style="width: 50%; text-align: right; ">
+                (2023.06.30)
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+                52주 최저
+              </td>          
+              <td id="52week-lowest-price" style="width: 50%; text-align: right; ">
+              </td>
+            </tr>  
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+               
+              </td>          
+              <td id="52week-lowest-price-date" style="width: 50%; text-align: right; ">
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgb(238,238,238);">
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+                전일종가
+              </td>          
+              <td id="prev-closing-price" style="width: 50%; text-align: right; ">
+              </td>
+            </tr>  
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+                당일고가              
+              </td>          
+              <td id="high-price" style="width: 50%; text-align: right; ">
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50%; text-align: left;" >                           
+              </td>          
+              <td id="high-price-change-rate" style="width: 50%; text-align: right; ">
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+                당일저가              
+              </td>          
+              <td id="low-price" style="width: 50%; text-align: right; ">
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50%; text-align: left;" >                           
+              </td>          
+              <td id="low-price-change-rate" style="width: 50%; text-align: right; ">
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div id="souh-area" style="height: 50%;">
-        <div id="trade-area" style="display: inline-block; width: 30%;"></div>
-        <div id="bid-hoga-area" style="display: inline-block; width: 37.5%;"></div>
-        <div id="bid-amount-area" style="display: inline-block; width: 30%;"></div>
+        <div id="trade-area" style="display: inline-block; width: 32%; vertical-align: top;">
+          <table style="width: 100%;">
+            <tr>
+              <td style="width: 50%; text-align: left;" >
+                체결강도
+              </td>
+              <td id="trade-strength" style="width: 50%; text-align: right;">          
+              </td>
+            </tr>            
+          </table>
+          <div>
+            <div style="background-color: rgb(249,250,252); display: inline-block; font-size: 10px; width: 45%; padding-top: 5px; padding-bottom: 5px;">체결가</div>
+            <div style="background-color: rgb(249,250,252); display: inline-block; font-size: 10px; width: 1%; padding-top: 5px; padding-bottom: 5px;">|</div>
+            <div style="background-color: rgb(249,250,252); display: inline-block; font-size: 10px; width: 45%; padding-top: 5px; padding-bottom: 5px;">체결량</div>
+          </div>
+          <div id="trade-data-area"">
+          </div>
+        </div>
+        <div id="bid-hoga-area" style="display: inline-block; width: 33%;"></div>
+        <div id="bid-amount-area" style="display: inline-block; width: 32%;"></div>
       </div>
     </div>
-    
   </body>
 </html>

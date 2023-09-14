@@ -50,4 +50,14 @@ interface OrderbookUnit {
     ask_size: number
     bid_size: number
 }
+
+interface Trade {
+    trade_price: number
+    trade_volume: number
+    ask_bid: string
+    prev_closing_price: number
+    change: string
+    change_price: number
+    sequential_id: number
+  }
   

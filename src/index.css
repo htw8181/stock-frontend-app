@@ -13,36 +13,74 @@ code {
     monospace;
 }
 
-.ask-item {
+.ask-item-area {
   border: 1px solid white;
-  height: fit-content;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 5px;
-  font-size: 10px;
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: end;
   background-color: rgb(227, 235, 245);
 }
 
-.bid-item {
-  border: 1px solid white;
+.ask-item-box {
+  width: 30%;
+  height: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(204,221,242);
+}
+
+.ask-item {  
   height: fit-content;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 5px;
   font-size: 10px;
   text-align: right;
+  background-color: transparent;
+}
+
+.bid-item-area {
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: start;
   background-color: rgb(251, 241, 239);
+}
+
+.bid-item {
+  height: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  font-size: 10px;
+  text-align: right;
+  background-color: transparent;
+}
+
+.bid-item-box {
+  width: 30%;
+  height: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(245,217,214);
 }
 
 .hoga-item {
   display: inline-block;
   width: 60%;
-  text-align: end;
 }
 
 .change-rate-item {
   display: inline-block;
   width: 40%;
-  text-align: end;
+}
+
+td {
+  font-size: 10px;
+}
+
+.trade-item {
+  display: inline-block;
+  width: 50%;
+  font-size: 10px;
 }
