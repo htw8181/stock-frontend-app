@@ -108,7 +108,6 @@ function renderAskAmount(): void {
     askAmountItem.id = `ask-amount-item${index}`;
     askAmountItem.classList.add("ask-item");
     askAmountItem.style.position = 'relative';
-    askAmountItem.textContent = `매도잔량${index}`;
     area.append(askAmountItem);
 
     documentFragment.append(area);
@@ -128,14 +127,12 @@ function renderAskHoga(): void {
     hogaItem.id = `ask-hoga${index}`;
     hogaItem.classList.add("hoga-item");
     hogaItem.classList.add("ask-item");
-    hogaItem.textContent = `매도호가${index}`;
     item.append(hogaItem);
 
     const changeRateItem = document.createElement("div");
     changeRateItem.id = `ask-change-rate${index}`;
     changeRateItem.classList.add("change-rate-item");
     changeRateItem.classList.add("ask-item");
-    changeRateItem.textContent = `변화율${index}`;
     item.append(changeRateItem);
 
     documentFragment.append(item);
@@ -155,14 +152,12 @@ function renderBidHoga(): void {
     hogaItem.id = `bid-hoga${index}`;
     hogaItem.classList.add("hoga-item");
     hogaItem.classList.add("bid-item");
-    hogaItem.textContent = `매수호가${index}`
     item.append(hogaItem);
     
     const changeRateItem = document.createElement("div");
     changeRateItem.id = `bid-change-rate${index}`;
     changeRateItem.classList.add("change-rate-item");
     changeRateItem.classList.add("bid-item");
-    changeRateItem.textContent = `변화율${index}`;
     item.append(changeRateItem);
     
     documentFragment.append(item);
@@ -187,7 +182,6 @@ function renderBidAmount(): void {
     bidAmountItem.id = `bid-amount-item${index}`;
     bidAmountItem.classList.add("bid-item");
     bidAmountItem.style.position = 'relative';
-    bidAmountItem.textContent = `매수잔량${index}`;
     area.append(bidAmountItem);
 
     documentFragment.append(area);
@@ -331,7 +325,7 @@ function updateOrderbookData(data: Orderbook): void {
     if(askAmountBox != null) askAmountBox.style.width = `${askGraphWidth}%`;
 
     const askAmountItem = document.getElementById(`ask-amount-item${index}`);
-    if(askAmountItem != null) askAmountItem.firstChild!!.textContent = `${askSize.toFixed(3)}`;
+    if(askAmountItem != null) askAmountItem.textContent = `${askSize.toFixed(3)}`;
     
     const askHogaItem = document.getElementById(`ask-hoga${index}`);
     if(askHogaItem != null) askHogaItem.textContent = `${orderBookUnits[index-1].ask_price.toLocaleString('ko-KR')}`;
@@ -347,7 +341,7 @@ function updateOrderbookData(data: Orderbook): void {
     if(bidAmountBox != null) bidAmountBox.style.width = `${bidGraphWidth}%`;
 
     const bidAmountItem = document.getElementById(`bid-amount-item${index}`);
-    if(bidAmountItem != null) bidAmountItem.firstChild!!.textContent = `${bidSize.toFixed(3)}`;
+    if(bidAmountItem != null) bidAmountItem.textContent = `${bidSize.toFixed(3)}`;
 
     if(tickerData != null) {
       const prevClosingPrice = tickerData.prev_closing_price;
